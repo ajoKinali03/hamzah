@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>latihan DOM</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<!--latihan DOM, membuat website latihan menghapala Al-Qur'an-->
+	<div id="container">
+		
+		<div class="header">
+			<h1>HAMZAH</h1>
+		</div>
+		<div class="konten">
+			<form class="input">
+				<label for="min">ayat awal. </label>
+				<input type="text" class="ayatAwal" name="min">
+				<br>
+				<label for="max">ayat akhir. </label>
+				<input type="text" class="ayatAkhir" name="max">
+				<br>
+				<button type="button" id="btn">tekan</button>
+				<button type="reset" id="rst">reset</button>
+			</form>
+			<div class="teks">
+				<p>bacakan Al-Qur'an</p>
+				<p>ayat:</p>
+			</div>
+			<p class="hasil"></p>
+		</div>
+	</div>
+
+
+	<script src="main.js"></script>
+</body>
+</html>
