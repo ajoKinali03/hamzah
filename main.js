@@ -16,17 +16,7 @@ const rst = document.getElementById('rst');
 rst.addEventListener('click', function (){
     const hpsHasil = document.getElementsByClassName('hasil')[0];
     hpsHasil.innerHTML = '';
-    //const hpsGagal = document.getElementsByClassName('gagal')[0];
-    //const parent = document.getElementsByClassName('konten')[0];
-    //parent.removeChild(hpsHasil);
-    //parent.removeChild(hpsGagal);
 });
-
-// rst.addEventListener('click', function (){
-//     const hpsGagal = document.getElementsByClassName('gagal')[0];
-//     const parent = document.getElementsByClassName('konten')[0];
-//     parent.removeChild(hpsGagal);
-// });
 
 
 btn.addEventListener('click', function (){
@@ -51,12 +41,7 @@ btn.addEventListener('click', function (){
       hsl.classList.add('gagal');
       hsl.innerHTML = 'maaf ayat awal harus kecil dari ayat akhir';
     };
-    /*
-    const rubah = () => {
-      const rbh = document.getElementsByClassName('gagal')[0];
-      rbh.setAttribute('class', 'hasil');
-    };
-*/
+    
     if(ayatAwal < ayatAkhir){
         if(hsl.className != 'hasil'){
           hsl.setAttribute('class', 'hasil');
@@ -69,3 +54,12 @@ btn.addEventListener('click', function (){
 
 
 });
+
+
+
+//detektor tinggi dari perankat
+setInterval(function(){
+  const container = document.getElementsByClassName('container')[0];
+  
+  container.style.height = window.innerHeight + 'px'; 
+}, 100);
