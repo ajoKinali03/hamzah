@@ -37,7 +37,7 @@ rst.addEventListener('click', function (){
         };
         if (count >= limit) {
           hsl.setAttribute('class', 'gagal');
-          hsl.innerText = 'maaf semua angka telah detampilkan';
+          hsl.innerText = 'maaf semua angka telah ditampilkan';
         };
         count++;
 
