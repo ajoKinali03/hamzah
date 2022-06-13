@@ -12,36 +12,19 @@
 
 const btn = document.getElementById('btn');
 const rst = document.getElementById('rst');
+const hsl = document.getElementsByClassName('hasil')[0];
 
 rst.addEventListener('click', function (){
     const hpsHasil = document.getElementsByClassName('hasil')[0];
     hpsHasil.innerHTML = '';
 });
 
+const ayatAwal = parseInt(document.getElementsByClassName('ayatAwal')[0].value);
+const ayatAkhir = () => {
+  parseInt(document.getElementsByClassName('ayatAkhir')[0].value);
+};
 
 btn.addEventListener('click', function (){
-
-     //mengambil nilai input ayat pertama
-    let ayatAwal = parseInt(document.getElementsByClassName('ayatAwal')[0].value);
-
-    let ayatAkhir = parseInt(document.getElementsByClassName('ayatAkhir')[0].value);
-    
-    const nRandom = () => {
-      const hsl = (ayatAkhir +  1) - ayatAwal;
-        const nRandom = Math.floor(Math.random() * hsl + ayatAwal);
-        return nRandom;
-    };
-  
-    const hsl = document.getElementsByClassName('hasil')[0];
-    const hasil = () => {
-        hsl.innerHTML = nRandom();
-    };
-
-    const gagal = () => {
-      hsl.classList.add('gagal');
-      hsl.innerHTML = 'maaf ayat awal harus kecil dari ayat akhir';
-    };
-    
     if(ayatAwal < ayatAkhir){
         if(hsl.className != 'hasil'){
           hsl.setAttribute('class', 'hasil');
@@ -54,6 +37,44 @@ btn.addEventListener('click', function (){
 
 
 });
+
+function nRandom() {
+  const hsl = (ayatAkhir + 1) - ayatAwal;
+  const nRandom = Math.floor(Math.random() * hsl + ayatAwal);
+  return nRandom;
+};
+
+
+const selectNumb = () => {
+  let arrKos = [];
+  for (let i = 0; i <= 500; i++) {
+    arrKos.push();
+  };
+  const arrHsl = [...new Set(arrKos)];
+  console.log('sleksi angka berhasil', arrHsl);
+  return arrHsl;
+};
+
+let count = 0;
+const slctN = selectNumb;
+function hasil() {
+  console.log('berhasil');
+  if (count <= 10) {
+    console.log(slctN());
+    hsl.innerHTML = slctN()[count];
+  };
+  if (count >= 10) {
+    hsl.innerHTML = 'maaf semua angka telah detampilkan';
+  };
+  count++;
+};
+
+function gagal() {
+  console.log('berhasil');
+  hsl.classList.add('gagal');
+  hsl.innerHTML = 'maaf ayat awal harus kecil dari ayat akhir';
+};
+
 
 
 
